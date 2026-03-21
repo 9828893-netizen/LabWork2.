@@ -153,7 +153,7 @@ f<!DOCTYPE html>
 
                 // Масив назв файлів .patt. Масив заповнюється в порядку додавання маркерів
                 // якщо замість .patt було додано баркод, на його місце в масив додається порожній рядок
-                const patternNames = ["my_marker" ,"pattern-2" ,"pattern-3"];
+                const patternNames = ["my_marker", "pattern-2", "pattern-3"];
                 // Масив баркодів, заповнюється одночасно з масивом патернів
                 // якщо замість баркоду був доданий .patt, на його місце масив додається -1
                 const patternBarcode = [1 ,2 ,3];
@@ -162,7 +162,7 @@ f<!DOCTYPE html>
                 // Масив файлів моделей, якщо немає моделі буде додано порожній рядок
                 const modelFiles = ["" ,"" ,""];
                 // Масив файлів зображень, якщо немає зображення буде додано також порожній рядок
-                const imageFiles = ["me.jpg" ,"image-2.jpg" ,"image-3.jpg"];
+                const imageFiles = ["me.jpg", "image-2.jpg", "image-3.jpg"];
                 // Масив файлів відео, якщо немає відео буде ще один порожній рядок
                 const videoFiles = ["" ,"" ,""];
                 // Масив файлів аудіо, якщо немає аудіо буде так само порожній рядок
@@ -184,7 +184,7 @@ f<!DOCTYPE html>
                     // якщо поточний маркер це патерн, аналогічно створюємо AR контролер під патерн
                     if (patternBarcode[i] === -1) {
                         let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
-                            // type: 'pattern', patternUrl: 'data/' + patternNames[i] + '.patt', size: 1 + (i + 1) / patternIdOffset
+                            // type: 'pattern', patternUrl: patternNames[i] + '.patt', size: 1 + (i + 1) / patternIdOffset
                         })
                         patternsID.push(patternNames[i]);
                     } else {
