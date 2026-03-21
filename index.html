@@ -171,10 +171,11 @@ f<!DOCTYPE html>
                 const repeatOptions = ["false" ,"false" ,"false"];
   
                 // Створюємо масив для всіх маркерів
-                const markerRoots = ["my_marker","pattern-2","pattern-3"];
-                for (let i = 0; i < 3; i++) {
-                    markerRoots[i] = new THREE.Group();
-                }
+               const markerRoots = []; // Створюємо порожній масив
+for (let i = 0; i < 3; i++) {
+    markerRoots[i] = new THREE.Group();
+    mainContainer.add(markerRoots[i]); // Додаємо групу в контейнер
+}
   
                 // Проходимо по кожному маркеру з масиву і додаємо його в головний контейнер
                 for (let i = 0; i < 3; i++) {
