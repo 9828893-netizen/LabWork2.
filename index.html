@@ -235,6 +235,7 @@ f<!DOCTYPE html>
                                         }
                                         let material1 = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
                                         mesh1 = new THREE.Mesh(geometry1, material1);
+                                        mesh1.scale.set(2, 2, 2);
                                         // Повертаємо площину
                                         mesh1.rotation.x = -Math.PI / 2;
                                         // Додаємо площину у контейнер
