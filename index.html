@@ -184,7 +184,7 @@ f<!DOCTYPE html>
                     // якщо поточний маркер це патерн, аналогічно створюємо AR контролер під патерн
                     if (patternBarcode[i] === -1) {
                         let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
-                            // type: 'pattern', patternUrl: patternNames[i] + '.patt', size: 1 + (i + 1) / patternIdOffset
+                             type: 'pattern', patternUrl: patternNames[i] + '.patt', size: 1 + (i + 1) / patternIdOffset
                         })
                         patternsID.push(patternNames[i]);
                     } else {
