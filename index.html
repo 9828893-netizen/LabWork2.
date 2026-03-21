@@ -170,31 +170,21 @@ f<!DOCTYPE html>
                 // Масив опцій повтору аудіо та відео контенту, по дефолту для всіх буде false
                 const repeatOptions = ["false" ,"false" ,"false"];
   
-                // Створюємо масив для всіх маркерів
-               const markerRoots = []; // Створюємо порожній масив
-for (let i = 0; i < 3; i++) {
-    markerRoots[i] = new THREE.Group();
-    mainContainer.add(markerRoots[i]); // Додаємо групу в контейнер
 }
-  
-                // Проходимо по кожному маркеру з масиву і додаємо його в головний контейнер
-                for (let i = 0; i < 3; i++) {
-                    mainContainer.add(markerRoots[i]);
+  const markerRoots = [];
 
-                    // Якщо поточний маркер – це баркод, створюємо AR контролер під баркод
-                    // якщо поточний маркер це патерн, аналогічно створюємо AR контролер під патерн
-                    if (patternBarcode[i] === -1) {
-                        let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
-                             type: 'pattern', patternUrl: patternNames[i] + '.patt', size: 1 + (i + 1) / patternIdOffset
-                        })
-                        patternsID.push(patternNames[i]);
-                    } else {
-                        let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
-                            type: "barcode", barcodeValue: patternBarcode[i],
-                        })
-                        barcodesID.push(patternBarcode[i]);
-                    }
+    for (let i = 0; i < 3; i++) {
+        // 1. Створюємо групу
+        markerRoots[i] = new THREE.Group();
+        mainContainer.add(markerRoots[i]);
 
+        // 2. Створюємо контролер (завантажуємо маркер)
+        let markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
+            type: 'pattern',
+            patternUrl: patternNames[i] + '.patt',
+        });
+    }
+        }
                     // Використовуємо switch для роботи з кожним окремим випадком контенту
                     switch (modes[i]) {
                         // Якщо контент під маркер це модель
